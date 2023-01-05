@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: minmax(5rem, 10rem) 1fr 1fr;
+  grid-template:
+    "header header header "
+    "menu content content"
+    "menu content content"
+    "footer footer footer";
+  grid-gap: 1rem;
+  grid-template-rows: 3rem 1fr 1fr 3rem;
+
+  &__header {
+    grid-area: header;
+    background-color: silver;
+  }
+  &__menu {
+    grid-area: menu;
+  }
+  &__content {
+    grid-area: content;
+  }
+  &__footer {
+    grid-area: footer;
+    background: rgb(0, 212, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 212, 255, 1) 0%,
+      rgba(81, 81, 255, 1) 88%,
+      rgba(26, 13, 255, 1) 100%
+    );
+  }
+}
