@@ -15,5 +15,5 @@ export function getAnimalById(req: Request, res: Response) {
   res.status(200).json({ payload: animalById });
 }
 
-export function postAnimal(req: Request, res: Response) {}
-export function putAnimal(req: Request, res: Response) {}
+export function addAnimal(req: Request, res: Response) {}
+export function updateAnimal(req: Request, res: Response) {}
