@@ -1,5 +1,7 @@
 import * as express from 'express';
 import { Application } from 'express';
+import { Server } from 'http';
+import { AddressInfo } from 'net';
 import {
   getAnimalById,
   getAnimals,
@@ -26,5 +28,8 @@ app.route('api/animals/:id').put(updateAnimal);
 app.route('api/animals').post(addAnimal);
 
 const httpServer = app.listen(9000, () => {
-  console.log('HTTP REST API Server running at ' + httpServer.address());
+  const address = httpServer.address() as AddressInfo;
+  console.log(
+    'HTTP REST API Server running at http://localhost:' + address.port
+  );
 });

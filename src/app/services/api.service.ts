@@ -7,9 +7,10 @@ import { AnimalInterface } from '../models/models';
   providedIn: 'root',
 })
 export class ApiService {
+  private _url: string = 'http://localhost:9000';
   constructor(private http: HttpClient) {}
 
-  getAnimals(): Observable<AnimalInterface> {
-    return this.http.get<AnimalInterface>('/api/animals');
+  getAnimals$(): Observable<AnimalInterface> {
+    return this.http.get<AnimalInterface>(this._url + '/api/animals');
   }
 }
