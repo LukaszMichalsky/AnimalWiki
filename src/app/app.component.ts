@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { ApiService } from './services/api.service';
 
@@ -11,10 +12,9 @@ import { ApiService } from './services/api.service';
 export class AppComponent {
   title = 'AnimalWiki';
 
-  constructor(apiService: ApiService) {
-    apiService
-      .getAnimals$()
-      .pipe(tap((res) => console.log(res)))
-      .subscribe();
+  constructor(private readonly _router: Router) {}
+
+  navigateTo(url: string) {
+    this._router.navigateByUrl(url);
   }
 }

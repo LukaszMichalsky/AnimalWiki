@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { AnimalSiteComponent } from './components/animal-site/animal-site.component';
+import { AnimalSiteComponent } from './components/sites/animal-site/animal-site.component';
+import { HomeSiteComponent } from './components/sites/home-site/home-site/home-site.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '', component: HomeSiteComponent },
   {
     path: 'animals',
     component: AnimalSiteComponent,
   },
+  // {
+  //   path: '**', Wildcard
+  // },
 ];
 
 @NgModule({

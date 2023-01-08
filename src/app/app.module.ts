@@ -1,14 +1,14 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AnimalCardComponent } from './components/animal-card/animal-card.component';
-import { AnimalSiteComponent } from './components/animal-site/animal-site.component';
+import { AnimalSiteComponent } from './components/sites/animal-site/animal-site.component';
+import { HomeSiteComponent } from './components/sites/home-site/home-site/home-site.component';
 
 @NgModule({
-  declarations: [AppComponent, AnimalCardComponent, AnimalSiteComponent],
+  declarations: [AppComponent, AnimalSiteComponent, HomeSiteComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

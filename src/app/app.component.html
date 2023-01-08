@@ -1,8 +1,11 @@
 <div class="grid">
   <div class="grid__header"></div>
-  <div class="grid__menu"></div>
+  <div class="grid__menu">
+    <div class="cursor-pointer" (click)="navigateTo('')">Home</div>
+    <div class="cursor-pointer" (click)="navigateTo('animals')">Animals</div>
+  </div>
   <div class="grid__content">
-    <!-- <app-root></app-root> -->
+    <router-outlet></router-outlet>
   </div>
   <div class="grid__footer"></div>
 </div>

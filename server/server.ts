@@ -1,6 +1,5 @@
 import * as express from 'express';
 import { Application } from 'express';
-import { Server } from 'http';
 import { AddressInfo } from 'net';
 import {
   getAnimalById,
