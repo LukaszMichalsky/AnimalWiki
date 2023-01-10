@@ -12,6 +12,9 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getAnimals$(): Observable<AnimalInterface[]> {
-    return this.http.get<AnimalInterface[]>(this._url + '/api/animals');
+    return this.http.get<AnimalInterface[]>(this._url + '/api/animals').pipe(
+      map((res) => res['payload']),
+      shareReplay()
+    );
   }
 }
