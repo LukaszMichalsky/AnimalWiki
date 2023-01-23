@@ -1,14 +1,13 @@
 .grid {
   display: grid;
   height: 100%;
-  grid-template-columns: minmax(5rem, 10rem) 1fr 1fr;
   grid-template:
     "header header header "
     "menu content content"
     "menu content content"
     "footer footer footer";
-  grid-gap: 1rem;
   grid-template-rows: 3rem 1fr 1fr 3rem;
+  grid-template-columns: minmax(10rem, 15rem) 1fr 1fr;
 
   &__header {
     grid-area: header;
@@ -16,9 +15,25 @@
   }
   &__menu {
     grid-area: menu;
+    display: flex;
+    margin: 0.5rem;
+    border: 2px black solid;
+    border-radius: 15px;
+    padding: 0.5rem;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: large;
+    > div {
+      background-color: #48b54c;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1rem;
+      border-radius: 20px;
+    }
   }
   &__content {
     grid-area: content;
+    overflow: auto;
   }
   &__footer {
     grid-area: footer;

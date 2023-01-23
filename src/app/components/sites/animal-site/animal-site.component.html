@@ -1,3 +1,38 @@
-<ng-container *ngFor="let animal of animals$ | async">
-  <animal-card [animalData]="animal"></animal-card>
-</ng-container>
+<div class="search">
+  <form [formGroup]="searchForm">
+    <label
+      >Animal:
+      <input formControlName="animal" type="text" />
+    </label>
+    <label for="dlc">Select DLC:</label>
+    <select id="dlc" formControlName="dlc">
+      <option value="" defaultSelected>Select</option>
+      <ng-container *ngFor="let option of dlc | keyvalue">
+        <option [value]="option.key">{{ option.value }}</option>
+      </ng-container>
+    </select>
+
+    <label for="continet">Select continent:</label>
+    <select id="continet" formControlName="continent">
+      <option value="" defaultSelected>Select</option>
+      <ng-container *ngFor="let option of continents | keyvalue">
+        <option [value]="option.key">{{ option.value }}</option>
+      </ng-container>
+    </select>
+
+    <label for="biomes">Select biome:</label>
+    <select name="biomes" formControlName="biome">
+      <option value="" defaultSelected>Select</option>
+      <ng-container *ngFor="let option of biomes | keyvalue">
+        <option [value]="option.key">{{ option.value }}</option>
+      </ng-container>
+    </select>
+    <button (click)="search()">Search</button>
+    <button (click)="reset()">Reset</button>
+  </form>
+</div>
+<div class="results_grid">
+  <ng-container *ngFor="let animal of animals$ | async">
+    <animal-card [animalData]="animal"></animal-card>
+  </ng-container>
+</div>

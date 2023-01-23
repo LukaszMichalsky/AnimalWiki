@@ -1,7 +1,6 @@
 <div class="card">
-  <div class="card__header">
-    <h3>Name: {{ animalData.Name }}</h3>
-    <span *ngIf="!!animalData.DLC"><b>DLC:</b> {{ animalData.DLC }}</span>
+  <h3 class="card-name">{{ animalData.Name }}</h3>
+  <div class="card__image">
+    <img class="card__image-img" src="{{ animalData.ImgURL }}" />
   </div>
-  <img src="{{ animalData.ImgURL }}" />
 </div>

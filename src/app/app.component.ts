@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
-import { tap } from 'rxjs';
-import { ApiService } from './services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',

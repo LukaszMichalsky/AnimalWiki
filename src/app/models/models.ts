@@ -19,12 +19,14 @@ export enum Continents {
 }
 
 export enum Biomes {
-  Grassland,
-  Tropical,
-  Temperate,
+  Grassland = 'Grassland',
+  Tropical = 'Tropical',
+  Temperate = 'Temperate',
 }
 
 export enum DLC {
   ConversationPack = 'Conversation Pack',
   GrasslandsAnimalPack = 'Grasslands Animal Pack',
+  AustraliaPack = 'Australia Pack',
+  EuropePack = 'Europe Pack',
 }
