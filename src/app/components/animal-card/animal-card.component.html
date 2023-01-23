@@ -1,6 +1,7 @@
 <div class="card">
-  <h3 class="card-name">{{ animalData.Name }}</h3>
-  <div class="card__image">
+  <h2 class="card-name">{{ animalData.Name }}</h2>
+  <div class="card__image" (click)="openAnimalModal()">
     <img class="card__image-img" src="{{ animalData.ImgURL }}" />
+    <mat-icon class="card__image-search"> search</mat-icon>
   </div>
 </div>

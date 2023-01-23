@@ -1,0 +1,15 @@
+<div class="dialog-container">
+  <mat-icon (click)="close()" class="close"> close</mat-icon>
+  <h2>{{ animal.Name }}</h2>
+  <img class="animal-image" src="{{ animal.ImgURL }}" />
+  <div>
+    DLC:
+    <ng-container *ngIf="animal.DLC; else noDLC">
+      {{ animal.DLC }}</ng-container
+    >
+    <ng-template #noDLC>---</ng-template>
+  </div>
+  <div>Continents: {{ animal.Continents }}</div>
+  <div>Biomes: {{ animal.Biomes }}</div>
+  <div>Group Size: {{ animal.GroupSize }}</div>
+</div>
