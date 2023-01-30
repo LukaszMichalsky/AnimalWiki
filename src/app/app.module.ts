@@ -11,9 +11,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { AnimalDetailModalComponent } from './components/modals/animal-detail-modal/animal-detail-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AddAnimalModalComponent } from './components/modals/add-animal-modal/add-animal-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeSiteComponent, AnimalDetailModalComponent],
+  declarations: [AppComponent, HomeSiteComponent, AnimalDetailModalComponent, AddAnimalModalComponent],
   providers: [],
   bootstrap: [AppComponent],
   imports: [

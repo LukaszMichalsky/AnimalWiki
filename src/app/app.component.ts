@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AddAnimalModalComponent } from './components/modals/add-animal-modal/add-animal-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +10,23 @@ import { Router } from '@angular/router';
   providers: [],
 })
 export class AppComponent {
+  showMenu: boolean = false;
   title = 'AnimalWiki';
 
-  constructor(private readonly _router: Router) {}
+  constructor(
+    private readonly _router: Router,
+    private _matDialog: MatDialog
+  ) {}
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
 
   navigateTo(url: string) {
     this._router.navigateByUrl(url);
+  }
+
+  addAnimal() {
+    this._matDialog.open(AddAnimalModalComponent);
   }
 }

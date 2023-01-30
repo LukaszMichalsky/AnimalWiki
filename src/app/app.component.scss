@@ -1,3 +1,11 @@
+$window-min-width: 650px;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 .grid {
   display: grid;
   height: 100%;
@@ -8,6 +16,16 @@
     "footer footer footer";
   grid-template-rows: 3rem 1fr 1fr 3rem;
   grid-template-columns: minmax(10rem, 15rem) 1fr 1fr;
+
+  @media (max-width: $window-min-width) {
+    grid-template:
+      "header header header "
+      "content content content"
+      "content content content"
+      "footer footer footer";
+
+    grid-template-rows: 3rem 1fr 1fr 3rem;
+  }
 
   &__header {
     grid-area: header;
@@ -22,6 +40,7 @@
     align-items: center;
     padding: 0 0.5rem;
   }
+
   &__menu {
     grid-area: menu;
     display: flex;
@@ -32,6 +51,19 @@
     flex-direction: column;
     font-weight: 600;
     font-size: large;
+
+    @media (max-width: $window-min-width) {
+      position: fixed;
+      top: 3rem;
+      left: 0;
+      bottom: 3rem;
+      width: 10rem;
+      height: auto;
+      z-index: 10;
+      background-color: whitesmoke;
+      transition: 0.3s ease-in-out;
+    }
+
     > div {
       background-color: #48b54c;
       width: 100%;
@@ -55,10 +87,6 @@
   }
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .button {
   align-items: flex-end;
   width: auto;
@@ -76,9 +104,28 @@
   justify-content: space-around;
   width: 36px;
   height: 24px;
+
+  @media (min-width: $window-min-width) {
+    visibility: hidden;
+  }
+
   span {
     background-color: black;
     width: 24px;
     height: 3px;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media (max-width: $window-min-width) {
+  .show-menu {
+    transform: translateX(0);
+  }
+
+  .hide-menu {
+    transform: translateX(-10rem);
   }
 }
