@@ -100,19 +100,39 @@ $window-min-width: 650px;
 .burger {
   cursor: pointer;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-around;
   width: 36px;
   height: 24px;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
 
   @media (min-width: $window-min-width) {
     visibility: hidden;
   }
 
   span {
+    display: block;
+    position: absolute;
     background-color: black;
     width: 24px;
     height: 3px;
+    transition: 0.25s linear;
+  }
+
+  span:nth-child(1) {
+    top: 0px;
+    transform-origin: top left;
+  }
+
+  span:nth-child(2) {
+    top: 8px;
+    transition: 0.2 s;
+  }
+  span:nth-child(3) {
+    top: 16px;
+    transform-origin: bottom left;
   }
 }
 
@@ -122,10 +142,18 @@ $window-min-width: 650px;
 
 @media (max-width: $window-min-width) {
   .show-menu {
-    transform: translateX(0);
+    span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
   }
 
   .hide-menu {
-    transform: translateX(-10rem);
+    transform: rotate(0deg);
   }
 }

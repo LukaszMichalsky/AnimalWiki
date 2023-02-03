@@ -1,14 +1,22 @@
 <div class="grid">
   <div class="grid__header">
-    <div class="burger" (click)="toggleMenu()">
+    <div
+      class="burger"
+      [ngClass]="showMenu ? 'show-menu' : 'hide-menu'"
+      (click)="toggleMenu()"
+    >
       <span></span>
       <span></span>
       <span></span>
     </div>
-    {{ showMenu }}
     <button class="button">Add animal</button>
   </div>
-  <div class="grid__menu" [ngClass]="showMenu ? 'show-menu' : 'hide-menu'">
+  <div
+    class="grid__menu"
+    [ngStyle]="{
+      transform: showMenu ? 'translateX(0)' : 'translateX(-10rem)'
+    }"
+  >
     <div class="cursor-pointer" (click)="navigateTo('')">Home</div>
     <div class="cursor-pointer" (click)="navigateTo('animals')">Animals</div>
   </div>
