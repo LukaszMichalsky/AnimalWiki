@@ -1,0 +1,9 @@
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+
+  &-close {
+    cursor: pointer;
+    align-self: flex-end;
+  }
+}

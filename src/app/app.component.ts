@@ -27,6 +27,9 @@ export class AppComponent {
   }
 
   addAnimal() {
-    this._matDialog.open(AddAnimalModalComponent);
+    this._matDialog.open(AddAnimalModalComponent, {
+      disableClose: true,
+      panelClass: 'less-padding-dialog-container',
+    });
   }
 }

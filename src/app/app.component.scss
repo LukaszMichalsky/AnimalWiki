@@ -141,7 +141,7 @@ $window-min-width: 650px;
 }
 
 @media (max-width: $window-min-width) {
-  .show-menu {
+  .show-burger {
     span:nth-child(1) {
       transform: rotate(45deg);
     }
@@ -153,7 +153,15 @@ $window-min-width: 650px;
     }
   }
 
-  .hide-menu {
+  .show-menu {
+    transform: translateX(0);
+  }
+
+  .hide-burger {
     transform: rotate(0deg);
+  }
+
+  .hide-menu {
+    transform: translateX(-10rem);
   }
 }

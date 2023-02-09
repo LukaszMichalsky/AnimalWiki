@@ -1,3 +1,7 @@
-<form [formGroup]="createAnimalForm">
-  <input formControlName="name" />
-</form>
+<div class="dialog-container">
+  <mat-icon (click)="close()" class="dialog-container-close"> close</mat-icon>
+  <form class="dialog-container__form" [formGroup]="createAnimalForm">
+    <label for="name">Animal: </label>
+    <input id="name" formControlName="name" />
+  </form>
+</div>

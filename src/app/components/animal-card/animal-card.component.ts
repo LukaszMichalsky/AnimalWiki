@@ -18,7 +18,6 @@ export class AnimalCardComponent {
   openAnimalModal() {
     this._matDialog.open(AnimalDetailModalComponent, {
       data: this.animalData,
-      disableClose: true,
     });
   }
 }

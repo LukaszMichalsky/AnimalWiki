@@ -1,0 +1,35 @@
+.bg {
+  width: 360px;
+  height: 360px;
+  display: flex;
+  background-image: linear-gradient(to bottom right, #fe65ff, #591de0);
+  border-radius: 20%;
+}
+
+.circle {
+  display: flex;
+  height: 250px;
+  width: 250px;
+  border-radius: 20%;
+  border: white 20px solid;
+  margin: auto;
+  position: relative;
+}
+
+.obiektyw {
+  height: 100px;
+  width: 100px;
+  border: white 20px solid;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.flesh {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+}
