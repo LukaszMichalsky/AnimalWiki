@@ -1,7 +1,52 @@
 <div class="dialog-container">
   <mat-icon (click)="close()" class="dialog-container-close"> close</mat-icon>
+  <h1 mat-dialog-title>Add animal</h1>
+
   <form class="dialog-container__form" [formGroup]="createAnimalForm">
-    <label for="name">Animal: </label>
-    <input id="name" formControlName="name" />
+    <mat-form-field>
+      <mat-label>Animal</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Continents</mat-label>
+      <mat-select formControlName="continents">
+        <mat-option
+          *ngFor="let continent of continents | keyvalue; let i = index"
+          [value]="continent"
+          multiple
+        >
+          {{ continent.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>DLC</mat-label>
+      <mat-select formControlName="dlc">
+        <mat-option
+          *ngFor="let expansion of dlc | keyvalue; let i = index"
+          [value]="expansion"
+          multiple
+        >
+          {{ expansion.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Biomes</mat-label>
+      <mat-select formControlName="biomes">
+        <mat-option
+          *ngFor="let continent of continents | keyvalue; let i = index"
+          [value]="continent"
+          multiple
+        >
+          {{ continent.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button [disabled]="createAnimalForm.valid" matButton>Submit</button>
   </form>
 </div>

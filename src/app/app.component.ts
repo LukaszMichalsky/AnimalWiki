@@ -30,6 +30,7 @@ export class AppComponent {
     this._matDialog.open(AddAnimalModalComponent, {
       disableClose: true,
       panelClass: 'less-padding-dialog-container',
+      width: '420px',
     });
   }
 }
