@@ -35,4 +35,8 @@
   <ng-container *ngFor="let animal of animals$ | async">
     <animal-card [animalData]="animal"></animal-card>
   </ng-container>
+  <div *ngIf="(animals$ | async)?.length == 0"
+  class="empty-box">
+ Nothing to show
+  </div>
 </div>
